@@ -60,7 +60,7 @@ void repeatSpoof(pcap_t *pcap, std::vector<Address> &addressList)
                     }
 
                     //broadcast
-                    if(ntohl(arp_hdr->tip_) == address.senderIp || ntohl(arp_hdr->tip_) == address.targetIp)
+                    if(ntohl(arp_hdr->tip_) == address.senderIp)
                     {
                         arpReplyAttack(pcap, address);
                         continue;
